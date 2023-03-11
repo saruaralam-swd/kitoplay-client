@@ -1,14 +1,14 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useState } from 'react';
 import Aside from '../Pages/Shared/Aside/Aside';
-import Footer from '../Pages/Shared/Footer/Footer';
+import Header from '../Pages/Shared/Header/Header';
 
 const Main = () => {
+  const [open, setOpen] = useState(true);
+
   return (
     <div>
-      <Aside />
-      <Outlet />
-      <Footer />
+      <Header open={open} setOpen={setOpen} />
+      <Aside open={open} setOpen={setOpen} />
     </div>
   );
 };
